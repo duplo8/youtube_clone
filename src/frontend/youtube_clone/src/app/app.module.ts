@@ -9,6 +9,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { VideoPageComponent } from './video-page/video-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { RouterModule } from '@angular/router';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,14 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    RouterModule.forRoot([
-      {path: '', component: MainPageComponent},
+    MatSidenavModule,
+    RouterModule.forRoot([      
+      {path: '', redirectTo: 'main-page', pathMatch: 'full'},
+      {path: 'main-page', component: MainPageComponent},
       {path: 'video-page', component: VideoPageComponent},
-      {path: 'profile-page', component: ProfilePageComponent}
-    ]),
+      {path: 'profile-page', component: ProfilePageComponent},
+      {path: '', redirectTo: 'main-page', pathMatch: 'full'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,16 @@
 <h1> Welcome to youtube original, definitely not a scammy site</h1>
+<mat-drawer-container class = "full-site-container">  
 
-<h2> here we do all the magic</h2>
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
-<router-outlet> </router-outlet>
+    <h2> here we do all the magic</h2>
+    <router-outlet> </router-outlet>
+
+    <mat-drawer #drawer mode="side">
+        <p>space for side stuff </p>
+    </mat-drawer>
+
+    <div>
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+        </button>
+    </div>
+</mat-drawer-container>
