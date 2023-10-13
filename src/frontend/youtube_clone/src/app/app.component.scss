@@ -5,7 +5,18 @@
     color: white;
 }
 
+.search-bar {
+    position:absolute;
+    left: 300px;
+    top: 20px;
+    background-color: #0F0F0F;
+    //color: #888888; for placeholder
+    color: white;
+    width: 300px;
+}
+
 .profile-button {
     position: absolute;
-    right: 0px;
+    right: 0px;    
+    top: 10px;
 }

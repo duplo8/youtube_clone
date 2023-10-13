@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { VideoComponent } from './video/video.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
     MainPageComponent,
     VideoComponent,
     ProfileComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
