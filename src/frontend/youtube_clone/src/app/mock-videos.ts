@@ -1,183 +1,320 @@
-export interface CommObj{
-    publisher: string,
-    comment: string
-}
-
-export interface VideoStats{
-    viewNum: number,
-    likesNum: number,
-    commNum: number,
-    commObj: CommObj
-}
-
 export interface MockVideo {
     id: number,
     name: string,
     publisher: string,
-    thumbnail: object,  //image url
+    thumbnail: string,  //image url
     size: number,
-    videoStats: object, //{viewNum: number, likesNum: number, commNum: number, commObj: object{publisher, string}}
+    viewsCount: number,
+    likesCount: number,
+    commentsCount: number,
+    commentObject: CommentObject,
+}
+
+export interface CommentObject{
+    publisher: string,
+    comment: string,
+    likes:number,
 }
 
 export const MockVideos: Array<MockVideo> =[
     {
         id: 1,
-        name: "Sample Video 1",
-        publisher: "Publisher A",
-        thumbnail: { type: "jpg", url: "thumbnail_url_1.jpg" },
+        name: "Video 1",
+        publisher: "User A",
+        thumbnail: "../../assets/thumbnail.jpg",
         size: 102400,
-        videoStats: {
-            viewNum: 5000,
-            likesNum: 250,
-            commNum: 50,
-            commObj: {
-                publisher: "User X",
-                comment: "Nice video!"
-            }
-        }
+        viewsCount: 5000,
+        likesCount: 250,
+        commentsCount: 50,
+        commentObject: {
+            publisher: "User B",
+            comment: "Great video!",
+            likes: 15,
+        },
     },
     {
         id: 2,
-        name: "Sample Video 2",
-        publisher: "Publisher B",
-        thumbnail: { type: "jpg", url: "thumbnail_url_2.jpg" },
+        name: "Video 2",
+        publisher: "User C",
+        thumbnail: "../../assets/thumbnail.jpg",
         size: 81920,
-        videoStats: {
-            viewNum: 7500,
-            likesNum: 300,
-            commNum: 60,
-            commObj: {
-                publisher: "User Y",
-                comment: "Great content."
-            }
-        }
+        viewsCount: 7500,
+        likesCount: 300,
+        commentsCount: 60,
+        commentObject: {
+            publisher: "User D",
+            comment: "Interesting content.",
+            likes: 10,
+        },
     },
     {
         id: 3,
-        name: "Sample Video 3",
-        publisher: "Publisher C",
-        thumbnail: { type: "jpg", url: "thumbnail_url_3.jpg" },
+        name: "Video 3",
+        publisher: "User E",
+        thumbnail: "../../assets/thumbnail.jpg",
         size: 153600,
-        videoStats: {
-            viewNum: 4200,
-            likesNum: 210,
-            commNum: 45,
-            commObj: {
-                publisher: "User Z",
-                comment: "Informative video."
-            }
-        }
+        viewsCount: 4200,
+        likesCount: 210,
+        commentsCount: 45,
+        commentObject: {
+            publisher: "User F",
+            comment: "I learned a lot from this.",
+            likes: 8,
+        },
     },
     {
         id: 4,
-        name: "Sample Video 4",
-        publisher: "Publisher D",
-        thumbnail: { type: "jpg", url: "thumbnail_url_4.jpg" },
+        name: "Video 4",
+        publisher: "User G",
+        thumbnail: "../../assets/thumbnail.jpg",
         size: 122880,
-        videoStats: {
-            viewNum: 6200,
-            likesNum: 280,
-            commNum: 55,
-            commObj: {
-                publisher: "User W",
-                comment: "Impressive!"
-            }
-        }
+        viewsCount: 6200,
+        likesCount: 280,
+        commentsCount: 55,
+        commentObject: {
+            publisher: "User H",
+            comment: "Impressive!",
+            likes: 12,
+        },
     },
     {
         id: 5,
-        name: "Sample Video 5",
-        publisher: "Publisher E",
-        thumbnail: { type: "jpg", url: "thumbnail_url_5.jpg" },
+        name: "Video 5",
+        publisher: "User I",
+        thumbnail: "../../assets/thumbnail.jpg",
         size: 204800,
-        videoStats: {
-            viewNum: 5500,
-            likesNum: 275,
-            commNum: 51,
-            commObj: {
-                publisher: "User V",
-                comment: "Well done!"
-            }
-        }
+        viewsCount: 5500,
+        likesCount: 275,
+        commentsCount: 51,
+        commentObject: {
+            publisher: "User J",
+            comment: "Well done!",
+            likes: 20,
+        },
     },
     {
         id: 6,
-        name: "Sample Video 6",
-        publisher: "Publisher F",
-        thumbnail: { type: "jpg", url: "thumbnail_url_6.jpg" },
-        size: 112640,
-        videoStats: {
-            viewNum: 4800,
-            likesNum: 240,
-            commNum: 49,
-            commObj: {
-                publisher: "User U",
-                comment: "Fantastic!"
-            }
-        }
+        name: "Video 1",
+        publisher: "User A",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 102400,
+        viewsCount: 5000,
+        likesCount: 250,
+        commentsCount: 50,
+        commentObject: {
+            publisher: "User B",
+            comment: "Great video!",
+            likes: 15,
+        },
     },
     {
         id: 7,
-        name: "Sample Video 7",
-        publisher: "Publisher G",
-        thumbnail: { type: "jpg", url: "thumbnail_url_7.jpg" },
-        size: 163840,
-        videoStats: {
-            viewNum: 6900,
-            likesNum: 310,
-            commNum: 61,
-            commObj: {
-                publisher: "User T",
-                comment: "Loved it!"
-            }
-        }
+        name: "Video 2",
+        publisher: "User C",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 81920,
+        viewsCount: 7500,
+        likesCount: 300,
+        commentsCount: 60,
+        commentObject: {
+            publisher: "User D",
+            comment: "Interesting content.",
+            likes: 10,
+        },
     },
     {
         id: 8,
-        name: "Sample Video 8",
-        publisher: "Publisher H",
-        thumbnail: { type: "jpg", url: "thumbnail_url_8.jpg" },
-        size: 143360,
-        videoStats: {
-            viewNum: 5800,
-            likesNum: 290,
-            commNum: 58,
-            commObj: {
-                publisher: "User S",
-                comment: "Impressive work."
-            }
-        }
+        name: "Video 3",
+        publisher: "User E",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 153600,
+        viewsCount: 4200,
+        likesCount: 210,
+        commentsCount: 45,
+        commentObject: {
+            publisher: "User F",
+            comment: "I learned a lot from this.",
+            likes: 8,
+        },
     },
     {
         id: 9,
-        name: "Sample Video 9",
-        publisher: "Publisher I",
-        thumbnail: { type: "jpg", url: "thumbnail_url_9.jpg" },
-        size: 184320,
-        videoStats: {
-            viewNum: 7100,
-            likesNum: 315,
-            commNum: 62,
-            commObj: {
-                publisher: "User R",
-                comment: "Educational."
-            }
-        }
+        name: "Video 4",
+        publisher: "User G",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 122880,
+        viewsCount: 6200,
+        likesCount: 280,
+        commentsCount: 55,
+        commentObject: {
+            publisher: "User H",
+            comment: "Impressive!",
+            likes: 12,
+        },
     },
     {
         id: 10,
-        name: "Sample Video 10",
-        publisher: "Publisher J",
-        thumbnail: { type: "jpg", url: "thumbnail_url_10.jpg" },
-        size: 133120,
-        videoStats: {
-            viewNum: 5400,
-            likesNum: 270,
-            commNum: 54,
-            commObj: {
-                publisher: "User Q",
-                comment: "Very informative."
-            }
-        }
+        name: "Video 5",
+        publisher: "User I",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 204800,
+        viewsCount: 5500,
+        likesCount: 275,
+        commentsCount: 51,
+        commentObject: {
+            publisher: "User J",
+            comment: "Well done!",
+            likes: 20,
+        },
+    },
+    {
+        id: 11,
+        name: "Video 1",
+        publisher: "User A",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 102400,
+        viewsCount: 5000,
+        likesCount: 250,
+        commentsCount: 50,
+        commentObject: {
+            publisher: "User B",
+            comment: "Great video!",
+            likes: 15,
+        },
+    },
+    {
+        id: 12,
+        name: "Video 2",
+        publisher: "User C",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 81920,
+        viewsCount: 7500,
+        likesCount: 300,
+        commentsCount: 60,
+        commentObject: {
+            publisher: "User D",
+            comment: "Interesting content.",
+            likes: 10,
+        },
+    },
+    {
+        id: 13,
+        name: "Video 3",
+        publisher: "User E",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 153600,
+        viewsCount: 4200,
+        likesCount: 210,
+        commentsCount: 45,
+        commentObject: {
+            publisher: "User F",
+            comment: "I learned a lot from this.",
+            likes: 8,
+        },
+    },
+    {
+        id: 14,
+        name: "Video 4",
+        publisher: "User G",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 122880,
+        viewsCount: 6200,
+        likesCount: 280,
+        commentsCount: 55,
+        commentObject: {
+            publisher: "User H",
+            comment: "Impressive!",
+            likes: 12,
+        },
+    },
+    {
+        id: 15,
+        name: "Video 5",
+        publisher: "User I",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 204800,
+        viewsCount: 5500,
+        likesCount: 275,
+        commentsCount: 51,
+        commentObject: {
+            publisher: "User J",
+            comment: "Well done!",
+            likes: 20,
+        },
+    },
+    {
+        id: 16,
+        name: "Video 1",
+        publisher: "User A",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 102400,
+        viewsCount: 5000,
+        likesCount: 250,
+        commentsCount: 50,
+        commentObject: {
+            publisher: "User B",
+            comment: "Great video!",
+            likes: 15,
+        },
+    },
+    {
+        id: 17,
+        name: "Video 2",
+        publisher: "User C",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 81920,
+        viewsCount: 7500,
+        likesCount: 300,
+        commentsCount: 60,
+        commentObject: {
+            publisher: "User D",
+            comment: "Interesting content.",
+            likes: 10,
+        },
+    },
+    {
+        id: 18,
+        name: "Video 3",
+        publisher: "User E",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 153600,
+        viewsCount: 4200,
+        likesCount: 210,
+        commentsCount: 45,
+        commentObject: {
+            publisher: "User F",
+            comment: "I learned a lot from this.",
+            likes: 8,
+        },
+    },
+    {
+        id: 19,
+        name: "Video 4",
+        publisher: "User G",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 122880,
+        viewsCount: 6200,
+        likesCount: 280,
+        commentsCount: 55,
+        commentObject: {
+            publisher: "User H",
+            comment: "Impressive!",
+            likes: 12,
+        },
+    },
+    {
+        id: 20,
+        name: "Video 5",
+        publisher: "User I",
+        thumbnail: "../../assets/thumbnail.jpg",
+        size: 204800,
+        viewsCount: 5500,
+        likesCount: 275,
+        commentsCount: 51,
+        commentObject: {
+            publisher: "User J",
+            comment: "Well done!",
+            likes: 20,
+        },
     },
 ]

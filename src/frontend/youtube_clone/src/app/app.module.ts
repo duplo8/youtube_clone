@@ -5,14 +5,17 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
+
 import { MainPageComponent } from './main-page/main-page.component';
 import { VideoComponent } from './video/video.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MainPageComponent,
     VideoComponent,
     ProfileComponent,
-    SidebarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

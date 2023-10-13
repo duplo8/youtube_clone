@@ -1,3 +1,22 @@
-<p>This is the main page</p>
-<h2> here we do all the magic, will add videos by for function</h2>
-<button type=button mat-stroked-button color="primary" routerLink='video'> this is a video box </button>
+<mat-grid-list cols="6" rowHeight="1.5:1" gutterSize="20">
+    <ul *ngFor="let video of mockVideos">
+        <mat-grid-tile type="button" routerLink='video'>
+            <img src="{{video.thumbnail}}"> <!--thumbnail to be added from every one {{video.thumbnail}}-->  
+            <mat-grid-tile-header>
+                {{video.publisher}}
+            </mat-grid-tile-header>
+            <mat-grid-tile-footer>
+                <p>{{video.name}}  -</p>
+                <p>-  views: {{video.viewsCount}}</p>
+            </mat-grid-tile-footer>
+        </mat-grid-tile>
+    </ul>
+</mat-grid-list>    
+
+<!--
+    <mat-card class="video-box">                
+        <mat-card-content>            
+                  <p>{{video.name}}</p>             
+            </mat-card>
+    </mat-card-content>
+-->
