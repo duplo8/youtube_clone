@@ -1,21 +1,20 @@
-<mat-drawer-container class="full-site-container" hasBackdrop="false"> 
+<mat-drawer-container class="full-site-container" hasBackdrop="false">
+    <!--header part-->
     <button type="button" mat-filled-button mat-icon-button (click)="drawer.toggle()" color="primary"> = </button>
-    <button routerLink = '../main-page'>YOUTUBE</button>
-    <button class = "profile-button" type = button mat-stroked-button color="primary" routerLink = '../profile-page'> click me for profile </button>
-    
-    
-   
-    
-    <router-outlet> </router-outlet>
+    <button routerLink=''>YOUTUBE</button>
+    <button class="profile-button" type=button mat-stroked-button color="primary" routerLink='../profile'> click me for
+        profile </button>
 
-    <mat-drawer #drawer mode="over" class= "sidebar">        <!--should move to side on main and over on video-->
+    <!--sidebar part-->
+    <mat-drawer #drawer mode="over" class="sidebar"> <!--should move to side on main and over on video-->
         <button type="button" mat-filled-button mat-icon-button (click)="drawer.toggle()" color="primary"> = </button>
-        <button routerLink = '../main-page'>YOUTUBE</button>
-        <p>space for side stuff </p>
-        <button type = button mat-stroked-button color="primary" routerLink = '../video-page'> this is a video box </button>
+        <button routerLink=''>YOUTUBE</button>
 
+        <!--to be moved to a "Sidebar-component"-->
+        <p>space for side stuff </p>
+        <button type=button mat-stroked-button color="primary" routerLink='video'> this is a video box </button>
     </mat-drawer>
 
-
-
+    <!--other parts-->
+    <router-outlet> </router-outlet>
 </mat-drawer-container>
